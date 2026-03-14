@@ -57,5 +57,10 @@
         "dist",
         "LICENSE",
         "package.json"
-    ]
+    ],
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "esbuild"
+        ]
+    }
 }
