@@ -3,7 +3,8 @@ import { defineConfig } from "tsup";
 export default defineConfig({
     format: ["esm"],
     entry: ["./src/index.ts"],
-    dts: true,
+    // Skip DTS on Vercel to avoid build timeout/failure; not needed for serverless deploy
+    dts: process.env.VERCEL !== "1",
     shims: true,
     clean: true,
     splitting: true,
